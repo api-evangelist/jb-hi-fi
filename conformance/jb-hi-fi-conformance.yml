@@ -1,0 +1,27 @@
+generated: '2026-10-21'
+method: searched
+source:
+- https://www.jbhifi.com.au/agents.md
+- https://www.jbhifi.com.au/.well-known/ucp
+standards:
+- id: ucp
+  conforms: true
+  evidence: '/.well-known/ucp declares ucp.version 2026-08-25 with service dev.ucp.shopping (transport mcp) and capabilities checkout, cart, fulfillment, discount, buyer_consent, order, catalog.search, catalog.lookup, identity_linking, permalink; agents.md: "This store implements the Universal Commerce Protocol".'
+- id: mcp
+  conforms: true
+  evidence: UCP shopping service transport mcp at https://www.jbhifi.com.au/api/ucp/mcp; tools/list returned 13 tools (json-schema/jb-hi-fi-ucp-mcp-tools-list.json).
+- id: web-bot-auth
+  conforms: true
+  evidence: 'agents.md: "Server-to-server requests and hosted or remote browsers must use Web Bot Auth".'
+- id: idempotency
+  conforms: partial
+  evidence: meta.idempotency-key required on complete_checkout only.
+- id: pagination
+  conforms: true
+  evidence: search_catalog catalog.pagination {cursor, limit}.
+- id: iso-4217
+  conforms: true
+  evidence: Tool descriptions state prices are integers in ISO 4217 minor units with a currency code.
+- id: google-pay
+  conforms: true
+  evidence: UCP payment_handlers com.google.pay version 2026-01-11, merchant_name JB Hi-Fi.

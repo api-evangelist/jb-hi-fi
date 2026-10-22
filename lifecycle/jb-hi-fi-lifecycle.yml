@@ -1,0 +1,13 @@
+generated: '2026-10-21'
+method: searched
+source: https://www.jbhifi.com.au/.well-known/ucp
+versioning:
+  scheme: date-based UCP protocol versions negotiated via the UCP profile
+  current: '2026-08-25'
+  supported_versions:
+    '2026-04-08': https://prod-jbhifi.myshopify.com/.well-known/ucp/2026-04-08
+    '2026-01-23': https://prod-jbhifi.myshopify.com/.well-known/ucp/2026-01-23
+  note: agents.md says "Use a compatible UCP version and follow the returned tool schemas."
+deprecation: No deprecation or sunset policy published by JB Hi-Fi.
+sla: none published
+status_page: null

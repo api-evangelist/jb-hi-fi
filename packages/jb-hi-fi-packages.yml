@@ -1,0 +1,5 @@
+generated: '2026-10-21'
+method: none
+source: https://www.jbhifi.com.au/agents.md
+note: JB Hi-Fi publishes no developer docs, SDKs or CLI. agents.md points agents to Shopify's Shop skill (shop.app/SKILL.md), which is Shopify's, not JB Hi-Fi's. No first-party package was found.
+packages: []

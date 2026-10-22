@@ -1,0 +1,12 @@
+name: JB Hi-Fi pricing
+generated: '2026-10-21'
+method: none
+source: https://www.jbhifi.com.au/agents.md
+audience: unclear
+pricing_basis: none
+published: false
+plan_count: 0
+delivery:
+  mode: managed
+note: JB Hi-Fi is a retailer; it publishes no API or developer plans. The UCP shopping MCP service carries no published fee or tier.
+plans: []

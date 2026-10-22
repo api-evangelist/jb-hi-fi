@@ -1,0 +1,14 @@
+name: JB Hi-Fi rate limits
+generated: '2026-10-21'
+method: searched
+source: https://www.jbhifi.com.au/agents.md
+limit_count: 1
+note: No numeric limit is published. agents.md documents only the exhaustion signal.
+status_on_exhaustion: 429
+headers:
+- Retry-After
+limits:
+- name: UCP shopping agent traffic back-off
+  scope: agent
+  limit_text: Back off on `429` responses and respect `Retry-After` when provided.
+  endpoint: https://www.jbhifi.com.au/api/ucp/mcp

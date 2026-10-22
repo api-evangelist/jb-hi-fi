@@ -1,23 +1,161 @@
 aid: jb-hi-fi
+
 name: JB Hi-Fi
-description: 'JB Hi-Fi is a company surfaced via the API Evangelist harvest backlog (source: australia-apidays-2026)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: JB Hi-Fi Limited is an ASX-listed Australian retailer of consumer electronics and home entertainment, founded in 1974 by John Barbuto with a single store in East Keilor, Victoria, and floated on the Australian Stock Exchange in October 2003. It describes itself as Australia's largest home entertainment retailer, selling computers, tablets, TVs, cameras, hi-fi, games, music and movies through its stores and its online store at jbhifi.com.au, alongside JB Hi-Fi HOME stores, JB Hi-Fi Business, a BYOD education portal and the JB Hi-Fi Marketplace. Its online store publishes an agents.md guide advertising Universal Commerce Protocol (UCP) discovery and an MCP endpoint for agentic shopping.
+
 url: https://raw.githubusercontent.com/api-evangelist/jb-hi-fi/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:australia-apidays-2026
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-21 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-21'
+
 modified: '2026-10-21'
+
 tags:
 - Company
-apis: []
+- Retail
+- Consumer Electronics
+- E-Commerce
+- Home Entertainment
+- Australia
+- Agentic Commerce
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+image: https://cdn.shopify.com/s/files/1/0024/9803/5810/files/logo.png?height=628&pad_color=fff&v=1613146384&width=1200
+
 common:
+- type: RateLimits
+  url: rate-limits/jb-hi-fi-rate-limits.yml
+- type: Idempotency
+  url: conventions/jb-hi-fi-conventions.yml
+- type: Conventions
+  url: conventions/jb-hi-fi-conventions.yml
+- type: Authentication
+  url: authentication/jb-hi-fi-authentication.yml
+- type: Lifecycle
+  url: lifecycle/jb-hi-fi-lifecycle.yml
+- type: Conformance
+  url: conformance/jb-hi-fi-conformance.yml
+- type: LLMsTxt
+  url: llms/jb-hi-fi-llms.txt
+- type: MCPServer
+  url: mcp/jb-hi-fi-mcp.yml
+- type: WellKnown
+  url: well-known/jb-hi-fi-well-known.yml
+- type: Hosts
+  url: hosts/jb-hi-fi-hosts.yml
+- type: IntegrationEdges
+  url: integrations/jb-hi-fi-integration-edges.yml
+- type: Vendors
+  url: vendors/jb-hi-fi-vendors.yml
+- type: Documentation
+  url: https://developers.instagram.com/
+- type: DomainSecurity
+  url: security/jb-hi-fi-domain-security.yml
 - type: Website
-  url: https://jbhifi.com.au/
+  url: https://www.jbhifi.com.au/
+- type: AboutUs
+  url: https://www.jbhifi.com.au/pages/about-us
+- type: Support
+  url: https://www.jbhifi.com.au/pages/help-and-support
+- type: Blog
+  url: https://www.jbhifi.com.au/blogs/news-and-reviews
+- type: Newsroom
+  url: https://www.jbhifi.com.au/blogs/music/news
+- type: TermsOfService
+  url: https://www.jbhifi.com.au/pages/help-and-support/terms-of-use
+- type: TermsOfSale
+  url: https://www.jbhifi.com.au/pages/help-and-support/terms-of-sale
+- type: PrivacyPolicy
+  url: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+- type: Careers
+  url: https://www.jbhifi.com.au/pages/jobs
+- type: Investors
+  url: https://investors.jbhifi.com.au/
+- type: Sustainability
+  url: https://www.jbhifi.com.au/pages/sustainability
+- type: AgentInstructions
+  url: https://www.jbhifi.com.au/agents.md
+- type: Instagram
+  url: https://www.instagram.com/jbhifi/
+- type: YouTube
+  url: https://www.youtube.com/user/JBHiFiOfficial
+- type: TikTok
+  url: https://www.tiktok.com/@jbhifi
+
+apis:
+- aid: jb-hi-fi:jb-hi-fi-ucp-shopping-mcp
+  name: JB Hi-Fi UCP Shopping MCP Server
+  description: Universal Commerce Protocol (UCP) shopping service for the JB Hi-Fi online store, advertised in the store's agents.md and its /.well-known/ucp profile, exposed as a remote MCP endpoint whose tools/list returns 13 tools for catalog search and lookup, product details, carts, checkout and orders. The store runs on Shopify; the UCP profile names the same service at prod-jbhifi.myshopify.com/api/ucp/mcp.
+  humanURL: https://www.jbhifi.com.au/agents.md
+  baseURL: https://www.jbhifi.com.au/api/ucp/mcp
+  tags:
+  - MCP
+  - Universal Commerce Protocol
+  - Agentic Commerce
+  - Checkout
+  - Catalog
+  properties:
+  - type: JSONSchema
+    url: json-schema/jb-hi-fi-ucp-mcp-tools-list.json
+  - type: Documentation
+    url: https://www.jbhifi.com.au/agents.md
+  - type: UCPProfile
+    url: https://www.jbhifi.com.au/.well-known/ucp
+
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: Website verified as www.jbhifi.com.au (jbhifi.com.au 301s to it); footer links read from a rendered browser session of the homepage (JS shell to plain GET). No developer portal, API docs, pricing or GitHub org found on the site; agents.md advertises UCP (/.well-known/ucp) and an MCP endpoint (/api/ucp/mcp) on Shopify, left for later modules.
+  evidence:
+  - url: https://jbhifi.com.au/
+    status: 301
+  - url: https://www.jbhifi.com.au/
+    status: 200
+  - url: https://www.jbhifi.com.au/pages/about-us
+    status: 200
+  - url: https://www.jbhifi.com.au/pages/help-and-support
+    status: 200
+  - url: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+    status: 200
+  - url: https://www.jbhifi.com.au/pages/help-and-support/terms-of-use
+    status: 200
+  - url: https://www.jbhifi.com.au/pages/help-and-support/terms-of-sale
+    status: 200
+  - url: https://www.jbhifi.com.au/blogs/news-and-reviews
+    status: 200
+  - url: https://www.jbhifi.com.au/blogs/music/news
+    status: 200
+  - url: https://www.jbhifi.com.au/pages/jobs
+    status: 200
+  - url: https://investors.jbhifi.com.au/
+    status: 200
+  - url: https://www.jbhifi.com.au/pages/sustainability
+    status: 200
+  - url: https://www.jbhifi.com.au/agents.md
+    status: 200
+  - url: https://www.instagram.com/jbhifi/
+    status: 200
+  - url: https://www.youtube.com/user/JBHiFiOfficial
+    status: 200
+  - url: https://www.tiktok.com/@jbhifi
+    status: 200
+x-enrichment:
+  date: '2026-10-21'
+  status: enriched
+  artifacts_added: 21
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

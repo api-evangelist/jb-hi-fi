@@ -1,0 +1,83 @@
+generated: '2026-10-21'
+method: searched
+source: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+policy_version: 'Version 24 - Date of publication 20 October 2026'
+signals:
+  data_subject_request:
+    url: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+    section: 'How to access, correct and update your personal information'
+    channel: privacy enquiry (web form) or post to The Privacy Officer, JB Hi-Fi Group Pty Ltd, PO BOX 5190 South Melbourne VIC 3205
+    rights_named: [access, correction, deletion, erasure (EU), portability (EU), withdrawal of consent (EU)]
+    fee: 'AUD 25 administration fee may be charged for access'
+    evidence:
+    - source: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: 'Upon your request, JB Hi-Fi will provide access to your personal information that we hold (except in certain circumstances set out in the Privacy Act 1988 (Cth)). JB Hi-Fi reserves the right to charge you an administration fee of $25 for providing access to your personal information and will, of course, require some proof of your identity before providing information to you.'
+    - source: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: 'To request access to the personal information that JB Hi-Fi holds about you, or to update, correct or delete that information, please submit a privacy enquiry.'
+    - source: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: 'Where we have processed your personal information by automated means, you may request to receive your personal information in a structured, commonly used and machine-readable format. You may also request that, where possible, we transmit such data to another third-party controller.'
+    note: >-
+      Access, correction and deletion are offered to all customers under the Australian Privacy Act, through a
+      privacy enquiry, with a possible $25 access fee and identity check. Erasure, portability and consent
+      withdrawal are stated as additional GDPR rights for EU customers only (section "Additional information
+      for EU customers"). No response time is stated.
+  data_residency:
+    url: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+    section: 'Disclosure of personal information to overseas recipients'
+    countries_named: [United States of America, Singapore, United Kingdom, Netherlands, Israel, New Zealand]
+    evidence:
+    - source: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: 'JB Hi-Fi is likely to disclose the personal information that it collects and holds about you to third -parties who are not in Australia (such as third- parties who are located in the United States of America, Singapore, the United Kingdom, the Netherlands, Israel and New Zealand) for one or more the purposes set out in this policy e.g. to provide you the goods/services you have purchased.'
+    - source: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: 'You consent to the transfer of your personal information from the EU to Australia, and from Australia to other third countries, in accordance with this policy. You may request further information in relation to the safeguards in place for any international transfers of your personal information.'
+    note: >-
+      Not a residency commitment: the policy discloses that personal data is likely to leave Australia, names
+      the destination countries (APP 8 disclosure), and warns some have less protective laws. No in-country
+      storage guarantee is offered.
+  ai_transparency:
+    url: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+    evidence:
+    - source: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: 'We may also use artificial intelligence for the purposes set out in this section, such as:'
+    - source: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: 'the operation and administration of “Ask JB” generative artificial intelligence chatbot on the JB Hi-Fi Website;'
+    note: >-
+      The privacy policy discloses AI use on personal information, listing customer service chatbots, the
+      "Ask JB" generative AI chatbot, call transcripts/summaries, process automation, fraud detection and
+      personalisation/predictive analytics. A purpose disclosure, not a model or training-data statement.
+  data_retention:
+    url: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+    evidence:
+    - source: https://www.jbhifi.com.au/pages/help-and-support/privacy-policy
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: 'Documents (including hard copy documents and electronic documents such as emails) which coincidentally contain personal information will also be retained in accordance with JB Hi-Fi’s normal document retention practices for accounting, legal and business purposes.'
+    note: >-
+      Retention is referred to only by reference to internal "normal document retention practices"; no
+      retention periods are published.
+  notice_and_action:
+    url: https://www.jbhifi.com.au/pages/help-and-support/terms-of-use
+    section: 'Notice and Takedown Procedure'
+    evidence:
+    - source: https://www.jbhifi.com.au/pages/help-and-support/terms-of-use
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: 'If you find content on this Website which you think infringes your intellectual property rights or is in breach of these Terms of Use, please contact us and please specify the following information:'
+    note: >-
+      A notice-and-takedown route for user-generated content on the website, requiring name, address, phone,
+      email, location of the content, a description of the breach and ownership details. No response time or
+      appeal process is stated.

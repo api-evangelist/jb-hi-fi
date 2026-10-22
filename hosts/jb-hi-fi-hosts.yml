@@ -1,0 +1,137 @@
+generated: '2026-10-21'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 10
+  own: 3
+  other_domain: 6
+  platform: 1
+  roles:
+  - api
+  - docs
+  - other
+  - website
+hosts:
+- host: api.com.au
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: api.com.au
+  role: api
+  relation: other-domain
+- host: api.instagram.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: instagram.com
+  role: api
+  relation: other-domain
+- host: api.tiktok.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: tiktok.com
+  role: api
+  relation: other-domain
+- host: app.jbhifi.com.au
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: jbhifi.com.au
+  role: other
+  relation: own
+- host: developers.instagram.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - namespace-probe
+  - well-known
+  types:
+  - Documentation
+  serves: []
+  title: Instagram Platform Overview | Facebook for Developers
+  status: 200
+  registrable_domain: instagram.com
+  role: docs
+  relation: other-domain
+- host: investors.jbhifi.com.au
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Investors
+  serves: []
+  registrable_domain: jbhifi.com.au
+  role: other
+  relation: own
+- host: www.instagram.com
+  found_by:
+  - pointer
+  - probed
+  - well-known
+  types:
+  - Instagram
+  serves: []
+  registrable_domain: instagram.com
+  role: other
+  relation: other-domain
+- host: www.jbhifi.com.au
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  - AboutUs
+  - Support
+  - Blog
+  - Newsroom
+  - TermsOfService
+  - TermsOfSale
+  - PrivacyPolicy
+  - Careers
+  - Sustainability
+  - AgentInstructions
+  serves:
+  - api
+  - docs
+  - cdn
+  - hosting
+  platform: shopify.com
+  vendor: cloudflare
+  registrable_domain: jbhifi.com.au
+  role: website
+  relation: own
+- host: www.tiktok.com
+  found_by:
+  - pointer
+  - probed
+  - well-known
+  types:
+  - TikTok
+  serves: []
+  registrable_domain: tiktok.com
+  role: other
+  relation: other-domain
+- host: www.youtube.com
+  found_by:
+  - pointer
+  types:
+  - YouTube
+  serves: []
+  registrable_domain: youtube.com
+  role: other
+  relation: platform

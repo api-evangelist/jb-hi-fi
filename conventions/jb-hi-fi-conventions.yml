@@ -1,0 +1,54 @@
+generated: '2026-10-21'
+method: searched
+source:
+- https://www.jbhifi.com.au/agents.md
+- https://www.jbhifi.com.au/.well-known/ucp
+- json-schema/jb-hi-fi-ucp-mcp-tools-list.json
+note: JB Hi-Fi publishes no REST API or developer docs. The only agent/developer surface is the Shopify-hosted UCP shopping MCP service described in agents.md; conventions below are read from agents.md, the UCP profile and the saved tools/list schemas.
+transport: MCP (JSON-RPC) at https://www.jbhifi.com.au/api/ucp/mcp; UCP profile names https://prod-jbhifi.myshopify.com/api/ucp/mcp
+auth:
+  style: Agent identification via the required meta.ucp-agent.profile URI on every tool call; agents.md says server-to-server requests "must use Web Bot Auth". Buyer identity linking is OAuth2 via Shop accounts (UCP dev.ucp.common.identity_linking).
+  see: authentication/jb-hi-fi-authentication.yml
+idempotency:
+  coverage: partial
+  header: meta.idempotency-key (tool argument, not an HTTP header)
+  scope:
+  - complete_checkout
+  description: Only complete_checkout requires meta.idempotency-key ("An idempotency key for completing the checkout."). The other 12 tools, including create_cart, create_checkout, update_* and cancel_*, declare no idempotency key.
+  retention: not stated
+pagination:
+  style: cursor
+  params:
+  - catalog.pagination.cursor
+  - catalog.pagination.limit (default 10, minimum 1)
+  operations:
+  - search_catalog
+money:
+  format: integer ISO 4217 minor units paired with a currency code (tool descriptions)
+localization: catalog context accepts address_country (ISO 3166-1 alpha-2), address_region, postal_code, language (BCP 47), currency (ISO 4217)
+versioning:
+  scheme: date-based UCP protocol versions
+  current: '2026-08-25'
+  supported: ['2026-04-08', '2026-01-23']
+  see: lifecycle/jb-hi-fi-lifecycle.yml
+rate_limit_signaling:
+  status: 429
+  headers:
+  - Retry-After
+  text: Back off on `429` responses and respect `Retry-After` when provided.
+  see: rate-limits/jb-hi-fi-rate-limits.yml
+human_in_the_loop: agents.md requires buyer authorization before placing orders or submitting payment and says to follow returned statuses, messages and handoff URLs when buyer action is required.
+reversibility:
+  status: documented
+  surfaces:
+  - write: cart (create_cart, update_cart)
+    reversal: cancel_cart
+    window: not stated
+  - write: checkout (create_checkout, update_checkout)
+    reversal: cancel_checkout
+    window: not stated
+  - write: complete_checkout (places an order)
+    reversal: none exposed via the MCP tools; no order cancel/refund tool is listed
+    window: not stated
+  note: Cancel tools exist for carts and checkouts (tools/list); no published window. No tool reverses a completed order.
+dry_run_mode: none documented

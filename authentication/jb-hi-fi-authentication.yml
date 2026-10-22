@@ -1,0 +1,20 @@
+generated: '2026-10-21'
+method: searched
+source:
+- https://www.jbhifi.com.au/agents.md
+- https://www.jbhifi.com.au/.well-known/ucp
+docs: https://www.jbhifi.com.au/agents.md
+summary: No OpenAPI and no API keys. The UCP shopping MCP service identifies agents by a UCP agent profile URI passed in every tool call's meta, and agents.md requires Web Bot Auth for server-to-server and hosted-browser traffic. Buyer account linking is OAuth2 through Shop accounts as declared in the UCP profile. The preflight also recorded a /.well-known/oauth-protected-resource document on www.jbhifi.com.au.
+schemes:
+- type: agent-profile
+  name: meta.ucp-agent.profile
+  in: tool-arguments
+  description: Required "Agent profile URI for UCP discovery." on all 13 tools.
+- type: http-message-signatures
+  name: Web Bot Auth
+  description: '"Server-to-server requests and hosted or remote browsers must use Web Bot Auth and follow the service''s authentication requirements."'
+  docs: https://shopify.dev/docs/api/storefront#identifying-bots-with-web-bot-auth
+- type: oauth2
+  name: identity_linking (app.shop.accounts)
+  auth_url: https://accounts.shop.app
+  description: UCP dev.ucp.common.identity_linking capability; scopes object is empty in the profile.

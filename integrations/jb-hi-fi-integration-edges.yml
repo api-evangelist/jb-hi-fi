@@ -1,0 +1,46 @@
+generated: '2026-10-21'
+method: searched
+source:
+- https://www.jbhifi.com.au/agents.md
+- https://www.jbhifi.com.au/.well-known/ucp
+- https://zapier.com/apps/jb-hi-fi/integrations
+- https://n8n.io/integrations/jb-hi-fi/
+- https://composio.dev/toolkits/jb-hi-fi
+- https://monid.ai/tools/jb-hi-fi
+checked:
+- https://www.jbhifi.com.au/agents.md
+- https://www.jbhifi.com.au/.well-known/ucp
+- https://composio.dev/toolkits/jb-hi-fi
+- https://monid.ai/tools/jb-hi-fi
+- https://n8n.io/integrations/jb-hi-fi/
+- https://zapier.com/apps/jb-hi-fi/integrations
+summary: JB Hi-Fi runs its online store on Shopify and exposes Shopify's UCP shopping MCP service; its UCP profile
+  declares Google Pay as a payment handler and Shop accounts as the identity-linking provider. It runs no developer
+  app marketplace.
+marketplace_apps: []
+edges:
+- partner_name: Shopify
+  partner: shopify
+  type: docs
+  relationship: core-infrastructure
+  direction: third-party
+  evidence: https://www.jbhifi.com.au/agents.md
+  use_case: 'agents.md: "This store is built on Shopify"; UCP endpoint prod-jbhifi.myshopify.com/api/ucp/mcp.'
+- partner_name: Google Pay
+  partner: google-pay
+  type: contract
+  relationship: payment-method
+  direction: unknown
+  evidence: https://www.jbhifi.com.au/.well-known/ucp
+  use_case: UCP payment_handlers com.google.pay (merchant_name JB Hi-Fi), used by complete_checkout.
+  operations:
+  - complete_checkout
+- partner_name: Shop (Shopify Shop app accounts)
+  partner: null
+  type: contract
+  relationship: consent-handoff
+  direction: third-party
+  evidence: https://www.jbhifi.com.au/.well-known/ucp
+  use_case: dev.ucp.common.identity_linking oauth2 provider app.shop.accounts (https://accounts.shop.app); agents.md
+    recommends the Shop skill.
+templates: []
